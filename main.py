@@ -1,4 +1,5 @@
-from crud.category import add_category
+from crud.books import add_book
+from crud.category import add_category, show_all_categories
 
 
 def main():
@@ -18,11 +19,11 @@ def main():
     elif option == "2":
         pass
     elif option == "3":
-        pass
+        show_all_categories()
     elif option == "4":
         pass
     elif option == "5":
-        pass
+        add_book()
     elif option == "6":
         pass
     elif option == "7":
