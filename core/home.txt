@@ -1,0 +1,11 @@
+Huddi birga proyektimizga o'xshatib quyidagi proyektni
+bajarib kelish kerak.
+
+Tasavvur qiling siz o'zingiz olgan qarzlarni va bergan
+qarzlaringizni huddi kontaktlaringiz saqlagandan saqlab
+ketoqchisiz. Yani kimdirdir qarz olsangiz uni nomerini kiritasiz
+va qancha olganingizni kiritasiz va sistema uni saqlab qo'yadi.
+Qarz olishingiz ham shunday. Bitta nomerni ikki martta saqlash kerak
+emas. Shuning uchun users va debts nomli alohida ikkita table yaratish
+kerak. Yoki boshqacha yechim qilsangiz ham bo'ladi. Muhimi muommoga yechim bo'lsa
+bo'lgani.

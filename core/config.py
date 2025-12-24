@@ -19,3 +19,6 @@ DB_CONFIG = {
     "host": DB_HOST,
     "password": DB_PASS
 }
+
+EMAIL_USER = os.getenv("EMAIL_USER")
+EMAIL_PASS = os.getenv("EMAIL_PASS")

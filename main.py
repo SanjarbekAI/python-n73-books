@@ -1,5 +1,36 @@
 from crud.books import add_book
 from crud.category import add_category, show_all_categories
+from crud.user import login, validate, logout_all
+
+
+def auth_menu():
+    print("""
+    1. Register
+    2. Login
+    3. Validate
+    3. Exit
+    """)
+    option = input("Enter your option: ")
+    if option == "1":
+        return auth_menu()
+    elif option == "2":
+        if login():
+            print("Welcome")
+            return main()
+        else:
+            print("Invalid email or password")
+            return auth_menu()
+    elif option == "3":
+        if validate():
+            print("Welcome")
+            return main()
+
+    elif option == "4":
+        print("Goodbye")
+        return None
+    else:
+        print("Invalid option")
+    return auth_menu()
 
 
 def main():
@@ -37,6 +68,9 @@ def main():
 
 
 if __name__ == '__main__':
+    # execute_query(users)
     # execute_query(category)
     # execute_query(books)
-    main()
+    # execute_query(codes)
+    logout_all()
+    auth_menu()

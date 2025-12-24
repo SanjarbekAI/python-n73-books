@@ -1,11 +1,13 @@
 from core.db_settings import execute_query
+from crud.user import get_active_user
 
 
 def add_category():
+    user = get_active_user()
     title = input("Enter category title: ")
     # check if title exists or not
-    query = "INSERT INTO category (title) VALUES (%s)"
-    params = (title,)
+    query = "INSERT INTO category (user_id, title) VALUES (%s, %s)"
+    params = (user['id'], title,)
     if execute_query(query=query, params=params):
         print("Category is added")
     else:
@@ -19,8 +21,10 @@ def delete_category():
 
 
 def show_all_categories():
-    query = "SELECT * FROM category;"
-    categories = execute_query(query=query, fetch="all")
+    user = get_active_user()
+    query = "SELECT * FROM category WHERE user_id=%s;"
+    params = (user['id'],)
+    categories = execute_query(query=query, params=params, fetch="all")
     if categories:
         counter = 1
         for cat in categories:
@@ -31,3 +35,5 @@ def show_all_categories():
     else:
         print("No category")
         return None
+
+
